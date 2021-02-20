@@ -1,9 +1,13 @@
 <div>
-    <form action="#">
+    <form action="#" wire:submit.prevent="storePost">
         <div class="mb-3">
             <label for="body" class="sr-only">Post Body</label>
             <textarea name="body" id="body" cols="30" rows="3" class="w-full border-2
-             border-gray-200 rounded-lg" placeholder="Share something.."></textarea>
+             border-gray-200 rounded-lg @error('body') border-red-500 @enderror" placeholder="Share something.."
+                      wire:model.defer="body"></textarea>
+            @error('body')
+                <span class="font-semibold text-red-500 text-sm">{{ $message }}</span>
+            @enderror
         </div>
 
         <button type="submit"

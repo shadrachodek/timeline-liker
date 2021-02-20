@@ -13,6 +13,8 @@ class Posts extends Component
         $this->posts = Post::latest()->take(100)->get();
     }
 
+
+
     public function render()
     {
         return view('livewire.posts');
