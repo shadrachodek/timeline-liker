@@ -14,7 +14,7 @@ class Posts extends Component
     ];
 
     public function mount() {
-        $this->posts = Post::latest()->take(100)->get();
+        $this->posts = Post::with('user', 'likes')->latest()->take(100)->get();
     }
 
     public function prependPost($post) {

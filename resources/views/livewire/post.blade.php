@@ -8,7 +8,7 @@
                             {{ $post->created_at->diffForHumans() }}
                         </span>
             </h2>
-            <p class="mb-2">{{ $post->body }}</p>
+            <p class="mb-2" wire:click="editPost">{{ $post->body }}</p>
         </div>
     </div>
     <div>

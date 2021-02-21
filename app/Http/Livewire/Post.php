@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\editPost;
 use App\Events\PostLiked;
 use Livewire\Component;
 
@@ -14,12 +15,20 @@ class Post extends Component
     {
         return [
             'echo:post.' . $this->post->id . ',PostLiked' => 'refreshPost',
+            'echo:post-edited.' . $this->post->id . ',PostEdited' => 'refreshPost',
             'echo:user.' . $this->post->user->id . ',ProfilePhotoUpdated' => 'refreshPost',
         ];
     }
 
     public function refreshPost() {
         $this->post = $this->post->fresh();
+    }
+
+    public function editPost() {
+        if (auth()->user()->id != $this->post->user->id) {
+            return;
+        }
+        broadcast(new editPost($this->post));
     }
 
     public function storeLike() {
