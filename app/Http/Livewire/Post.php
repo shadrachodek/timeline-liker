@@ -13,7 +13,8 @@ class Post extends Component
     public function getListeners()
     {
         return [
-            'echo:post.' . $this->post->id . ',PostLiked' => 'refreshPost'
+            'echo:post.' . $this->post->id . ',PostLiked' => 'refreshPost',
+            'echo:user.' . $this->post->user->id . ',ProfilePhotoUpdated' => 'refreshPost',
         ];
     }
 

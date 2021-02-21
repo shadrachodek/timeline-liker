@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -20,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'profile_photo',
     ];
 
     /**
@@ -45,6 +47,10 @@ class User extends Authenticatable
         if (! $this->profile_photo) {
             return $this->defaultProfilePhotoUrl();
         }
+
+       return Storage::url($this->profile_photo);
+   //     $contents = Storage::get($this->profile_photo);
+     //   dd($contents);
     }
 
     protected function defaultProfilePhotoUrl() {

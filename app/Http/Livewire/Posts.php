@@ -9,7 +9,9 @@ class Posts extends Component
 {
     public $posts;
 
-    protected $listeners = ['echo:post,PostCreated' => 'prependPost'];
+    protected $listeners = [
+        'echo:post,PostCreated' => 'prependPost',
+    ];
 
     public function mount() {
         $this->posts = Post::latest()->take(100)->get();
