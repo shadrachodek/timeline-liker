@@ -1,14 +1,24 @@
 <div class="flex items-center justify-between borrder-b border-gray-200 p-3">
-    <div class="flex">
-        <img src="{{ $post->user->profilePhoto() }}" alt="{{ $post->user->name }}" class="w-12 h-12 rounded-full mr-4">
-        <div>
-            <h2 class="font-semibold">
-                {{ $post->user->name }}
-                <span class="text-sm text-gray-500">
+    <div class="flex flex-grow items-center group">
+       <div class="flex flex-grow">
+           <img src="{{ $post->user->profilePhoto() }}" alt="{{ $post->user->name }}" class="w-12 h-12 rounded-full mr-4">
+           <div>
+               <h2 class="font-semibold">
+                   {{ $post->user->name }}
+                   <span class="text-sm text-gray-500">
                             {{ $post->created_at->diffForHumans() }}
                         </span>
-            </h2>
-            <p class="mb-2" wire:click="editPost">{{ $post->body }}</p>
+               </h2>
+               <p class="mb-2" wire:click="editPost">{{ $post->body }}</p>
+           </div>
+       </div>
+
+        <div class="mr-10 invisible group-hover:visible">
+            <a href="#" wire:click.prevent="deletePost">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6 text-gray-500">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                </svg>
+            </a>
         </div>
     </div>
     <div>

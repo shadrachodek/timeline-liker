@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Events\editPost;
+use App\Events\PostDeleted;
 use App\Events\PostLiked;
 use Livewire\Component;
 
@@ -44,6 +45,18 @@ class Post extends Component
         $like->save();
 
         broadcast(new PostLiked($this->post));
+
+    }
+
+    public function deletePost() {
+
+        if (auth()->user()->id != $this->post->user->id) {
+            return;
+        }
+
+        $this->post->delete();
+
+        broadcast(new PostDeleted());
     }
 
     public function render()

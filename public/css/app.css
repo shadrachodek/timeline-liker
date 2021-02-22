@@ -27050,6 +27050,30 @@ select {
   visibility: hidden;
 }
 
+.group:hover .group-hover\:visible {
+  visibility: visible;
+}
+
+.group:hover .group-hover\:invisible {
+  visibility: hidden;
+}
+
+.hover\:visible:hover {
+  visibility: visible;
+}
+
+.hover\:invisible:hover {
+  visibility: hidden;
+}
+
+.focus\:visible:focus {
+  visibility: visible;
+}
+
+.focus\:invisible:focus {
+  visibility: hidden;
+}
+
 .whitespace-normal {
   white-space: normal;
 }
@@ -57723,6 +57747,30 @@ select {
     visibility: hidden;
   }
 
+  .group:hover .sm\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .sm\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
+  .sm\:hover\:visible:hover {
+    visibility: visible;
+  }
+
+  .sm\:hover\:invisible:hover {
+    visibility: hidden;
+  }
+
+  .sm\:focus\:visible:focus {
+    visibility: visible;
+  }
+
+  .sm\:focus\:invisible:focus {
+    visibility: hidden;
+  }
+
   .sm\:whitespace-normal {
     white-space: normal;
   }
@@ -88328,6 +88376,30 @@ select {
   }
 
   .md\:invisible {
+    visibility: hidden;
+  }
+
+  .group:hover .md\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .md\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
+  .md\:hover\:visible:hover {
+    visibility: visible;
+  }
+
+  .md\:hover\:invisible:hover {
+    visibility: hidden;
+  }
+
+  .md\:focus\:visible:focus {
+    visibility: visible;
+  }
+
+  .md\:focus\:invisible:focus {
     visibility: hidden;
   }
 
@@ -118939,6 +119011,30 @@ select {
     visibility: hidden;
   }
 
+  .group:hover .lg\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .lg\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
+  .lg\:hover\:visible:hover {
+    visibility: visible;
+  }
+
+  .lg\:hover\:invisible:hover {
+    visibility: hidden;
+  }
+
+  .lg\:focus\:visible:focus {
+    visibility: visible;
+  }
+
+  .lg\:focus\:invisible:focus {
+    visibility: hidden;
+  }
+
   .lg\:whitespace-normal {
     white-space: normal;
   }
@@ -149547,6 +149643,30 @@ select {
     visibility: hidden;
   }
 
+  .group:hover .xl\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .xl\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
+  .xl\:hover\:visible:hover {
+    visibility: visible;
+  }
+
+  .xl\:hover\:invisible:hover {
+    visibility: hidden;
+  }
+
+  .xl\:focus\:visible:focus {
+    visibility: visible;
+  }
+
+  .xl\:focus\:invisible:focus {
+    visibility: hidden;
+  }
+
   .xl\:whitespace-normal {
     white-space: normal;
   }
@@ -180152,6 +180272,30 @@ select {
   }
 
   .\32xl\:invisible {
+    visibility: hidden;
+  }
+
+  .group:hover .\32xl\:group-hover\:visible {
+    visibility: visible;
+  }
+
+  .group:hover .\32xl\:group-hover\:invisible {
+    visibility: hidden;
+  }
+
+  .\32xl\:hover\:visible:hover {
+    visibility: visible;
+  }
+
+  .\32xl\:hover\:invisible:hover {
+    visibility: hidden;
+  }
+
+  .\32xl\:focus\:visible:focus {
+    visibility: visible;
+  }
+
+  .\32xl\:focus\:invisible:focus {
     visibility: hidden;
   }
 

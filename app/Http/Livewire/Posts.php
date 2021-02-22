@@ -11,6 +11,7 @@ class Posts extends Component
 
     protected $listeners = [
         'echo:post,PostCreated' => 'prependPost',
+        'echo:post-deleted,PostDeleted' => 'refreshPost',
     ];
 
     public function mount() {
@@ -19,6 +20,10 @@ class Posts extends Component
 
     public function prependPost($post) {
         $this->posts->prepend(Post::find($post['id']));
+    }
+
+    public function refreshPost() {
+        $this->posts = $this->posts->fresh();
     }
 
 
