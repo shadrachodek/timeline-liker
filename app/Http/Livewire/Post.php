@@ -32,6 +32,13 @@ class Post extends Component
     }
 
     public function storeLike() {
+        //dd($this->post->likes->pluck('user_id'));
+        if(
+            (count($this->post->likes) > 0 ) &&
+            in_array(auth()->id(), $this->post->likes->pluck('user_id')->toArray())) {
+                return;
+        }
+     //   if (auth())
         $like = $this->post->likes()->make();
         $like->user()->associate(auth()->user());
         $like->save();
